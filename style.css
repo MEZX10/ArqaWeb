@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-family: "Tajawal", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+header {
+    background-color: #feffff;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lang-switcher a {
+    /* أساسيات التصميم */
+    display: inline-block;
+    color: #333;
+    /* لون النص */
+    text-decoration: none;
+    /* إزالة الخط تحت الرابط */
+    font-weight: bold;
+    padding: 5px 10px;
+    /* مسافة داخلية */
+    border: 1px solid transparent;
+    /* لجعل التنسيق أفضل عند التمرير */
+    transition: all 0.3s ease;
+    /* لعمل تأثير سلس عند التمرير */
+}
+
+.lang-switcher a:hover {
+    color: #000;
+    /* تغيير اللون عند المرور */
+    border-color: #ccc;
+    /* إظهار إطار خفيف */
+    border-radius: 5px;
+}
+
+.grandplazalogo {
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 200px;
+}
+
+
+.logoimg {
+    width: 400px;
+    height: auto;
+}
+
+.navigations {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 350px;
+}
+
+.navigations a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+    transition: color 0.3s ease;
+
+}
+
+.navigations a:hover {
+    color: #d4af37;
+}
+
+.homemainphoto {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.AboutUsp {
+    padding: 100px 200px;
+}
+
+
+
+.aboutussection {
+    text-align: right;
+    padding: 100px 0;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+    padding-top: 100px;
+    /* لتوفير مسافة علوية كافية */
+    margin-top: -50px;
+    /* لتعويض المسافة المضافة (إذا لزم الأمر لترتيب التخطيط) */
+}
+
+
+.future-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.future-content-text {
+    flex: 1;
+    min-width: 45%;
+}
+
+.future-title {
+    font-size: 40px;
+    color: #292a3e;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #b49c79;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.future-description {
+    font-size: 20px;
+    color: #292a3e;
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.future-details {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    padding-right: 15px;
+    position: relative;
+}
+
+.future-details::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #b49c79;
+    font-size: 20px;
+}
+
+.future-details strong {
+    color: #000000;
+}
+
+
+.future-content-image {
+    flex: 1;
+    min-width: 50%;
+    position: relative;
+    padding-bottom: 25%;
+    height: 0;
+}
+
+.future-content-image img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(41, 42, 62, 0.2);
+    object-fit: cover;
+    z-index: 2;
+}
+
+.image-backdrop {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: #b49c79;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* التعديل على الـ Media Query ليصبح المظهر جيداً على الموبايل */
+@media (max-width: 1000px) {
+    /* ... (باقي أكواد الموبايل كما هي) ... */
+
+    /* تعديل تنسيق الصورة في شاشات الموبايل ليظهر الصندوق بشكل مناسب */
+    .future-content-image {
+        min-width: 100%;
+        order: 1;
+        padding-bottom: 70%;
+        /* زيادة ارتفاع العمود في الموبايل */
+        height: auto;
+    }
+
+    /* إلغاء الإزاحة في شاشات الموبايل لجعلها تبدو أفضل */
+    .image-backdrop {
+        top: 15px;
+        right: 15px;
+    }
+
+    /* وضع الصورة بشكل مناسب في شاشات الموبايل */
+    .future-content-image img {
+        top: 0;
+        right: 0;
+        width: calc(100% - 15px);
+        /* تصغير بسيط لترك مساحة للخلفية */
+        height: calc(100% - 15px);
+    }
+}
+
+.testcrockie {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: inherit;
+    z-index: 20;
+    padding-top: 80px;
+}
+
+
+/* =================================================== */
+/* C. تنسيق قسم تواصل معنا (Contact Section) */
+/* =================================================== */
+.contact-section {
+    direction: rtl;
+    padding: 80px 0;
+    background-color: #fcfcfc;
+    /* خلفية نظيفة */
+    text-align: center;
+}
+
+.contact-header {
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.contact-title {
+    font-size: 38px;
+    color: #292a3e;
+    /* اللون الداكن للعنوان */
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* تخطيط Grid للقسم الرئيسي (الخريطة والنموذج) */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* تخطيط عمودين: الخريطة على اليمين والنموذج على اليسار */
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    padding: 0 30px;
+    text-align: right;
+}
+
+/* 1. تنسيق عمود الخريطة */
+.contact-map-block {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* تحديد ارتفاع للخريطة */
+    height: 600px;
+}
+
+.contact-map-block iframe {
+    border-radius: 12px;
+}
+
+.map-details {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* 2. تنسيق عمود النموذج */
+.contact-form-block {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group.full-width {
+    flex: none;
+}
+
+label {
+    font-size: 14px;
+    color: #292a3e;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #b49c79;
+    /* إطار بلون ذهبي عند التركيز */
+    box-shadow: 0 0 0 2px rgba(180, 156, 121, 0.3);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* زر الإرسال */
+.submit-button {
+    background-color: #292a3e;
+    /* لون أزرق داكن كخلفية */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+
+.submit-button:hover {
+    background-color: #b49c79;
+    /* لون ذهبي عند المرور */
+    color: #292a3e;
+}
+
+/* تنسيق الاستجابة (Responsive) */
+@media (max-width: 992px) {
+    .contact-container {
+        /* تحويل التخطيط إلى عمود واحد في الشاشات الصغيرة */
+        grid-template-columns: 1fr;
+    }
+
+    .contact-map-block {
+        height: 400px;
+        /* تقليل ارتفاع الخريطة */
+        order: 2;
+        /* وضع الخريطة أسفل النموذج */
+    }
+
+    .contact-form-block {
+        order: 1;
+        /* وضع النموذج أولاً */
+    }
+
+    .form-row {
+        flex-direction: column;
+        /* جعل حقول الصف الواحد عمودية */
+        gap: 0;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .submit-button {
+        align-self: center;
+        /* توسيط زر الإرسال */
+    }
+}
+
+
+/* =================================================== */
+/* D. تنسيق الفوتر (Footer) */
+/* =================================================== */
+.main-footer {
+    direction: rtl;
+    background-color: #171823;
+    /* اللون الأساسي الداكن للفوتر */
+    color: #f0f0f0;
+    /* لون النص الفاتح */
+    padding: 60px 0 20px 0;
+    font-size: 16px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* تخطيط الأعمدة العلوية */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    /* للسماح للأعمدة بالنزول في شاشات الموبايل */
+}
+
+.footer-col {
+    width: 30%;
+    /* توزيع متساوٍ تقريباً للأعمدة */
+    padding: 15px 0;
+}
+
+.footer-heading {
+    font-size: 20px;
+    color: #b49c79;
+    /* اللون الذهبي للعناوين */
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+/* خط تزييني أسفل العناوين */
+.footer-heading::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #b49c79;
+    margin-top: 5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #b49c79;
+    /* لون ذهبي عند المرور */
+}
+
+/* تنسيق أيقونات التواصل الاجتماعي */
+.social-links {
+    text-align: right;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #b49c79;
+}
+
+/* الخط الفاصل */
+.footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+}
+
+/* الصف السفلي (الشعار وحقوق النشر) */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.bottom-logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.developer-name {
+    color: #b49c79;
+    /* إبراز اسم المطور باللون الذهبي */
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
+/* الاستجابة (Responsive) */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+
+    /* توسيط الخط التزييني تحت العناوين في شاشات الموبايل */
+    .footer-heading::after {
+        margin: 5px auto 0 auto;
+    }
+
+    .social-links {
+        text-align: center;
+    }
+}
+
+
+#backToTop {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    /* مخفي تحت */
+    pointer-events: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* يطلع فوق */
+    pointer-events: auto;
+}
+
+
+#backToTop:hover {
+    background: #555;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+
+.about-section {
+    padding: 70px 8%;
+    background-color: #ffffff;
+    text-align: center;
+    direction: rtl;
+    font-family: "Tajawal", "Cairo", sans-serif;
+}
+
+.about-section h2 {
+    font-size: 2.6em;
+    color: #222;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #bfa265;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+/* ==== التصميم الأساسي لكل عنصر ==== */
+.about-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==== الخلفيات المتدرجة لكل عنصر ==== */
+.about-item:nth-child(1) {
+    background: linear-gradient(135deg, #f9f6ef, #fffdf9);
+}
+
+.about-item:nth-child(2) {
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+}
+
+.about-item:nth-child(3) {
+    background: linear-gradient(135deg, #fffaf3, #fdfbf7);
+}
+
+.about-item:nth-child(4) {
+    background: linear-gradient(135deg, #f8f8f6, #ffffff);
+}
+
+.about-item:nth-child(5) {
+    background: linear-gradient(135deg, #fdf8f0, #fff);
+}
+
+.about-item:nth-child(6) {
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+}
+
+/* ==== تأثير hover الفاخر ==== */
+.about-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(191, 162, 101, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    border-radius: inherit;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-item:hover::before {
+    opacity: 1;
+}
+
+.about-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ==== الصور ==== */
+.about-item img {
+    width: 45%;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.about-item img:hover {
+    transform: scale(1.04);
+}
+
+/* ==== النص ==== */
+.about-text {
+    width: 50%;
+    text-align: right;
+    padding: 20px 25px;
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+}
+
+.about-text h3 {
+    color: #bfa265;
+    font-size: 1.9em;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.about-text p {
+    color: #333;
+    font-size: 1.15em;
+    line-height: 2.1;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* ==== تأثيرات الظهور ==== */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.from-right {
+    transform: translateX(60px);
+}
+
+.fade-in.from-left {
+    transform: translateX(-60px);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==== تجاوب ==== */
+@media (max-width: 992px) {
+    .about-section {
+        padding: 60px 6%;
+    }
+
+    .about-item {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-text,
+    .about-item img {
+        width: 100%;
+    }
+
+    .about-text h3 {
+        font-size: 1.7em;
+    }
+
+    .about-text p {
+        font-size: 1.05em;
+        line-height: 1.9;
+    }
+
+    .fade-in.from-left,
+    .fade-in.from-right {
+        transform: translateY(40px);
+    }
+}
+
+/* ==== القسم السابع (الصورة الكاملة) ==== */
+.about-item.full-image {
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.about-item.full-image img {
+    width: 100%;
+    max-width: 2000px;
+    /* حدد الحد الأقصى */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.about-item.full-image img:hover {
+    transform: scale(1.03);
+}
