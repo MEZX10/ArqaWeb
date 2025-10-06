@@ -18,7 +18,11 @@ body {
 header {
     background-color: #feffff;
     width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
     z-index: 999;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,47 +30,58 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.lang-switcher a {
-    /* أساسيات التصميم */
-    display: inline-block;
-    color: #333;
-    /* لون النص */
-    text-decoration: none;
-    /* إزالة الخط تحت الرابط */
-    font-weight: bold;
-    padding: 5px 10px;
-    /* مسافة داخلية */
-    border: 1px solid transparent;
-    /* لجعل التنسيق أفضل عند التمرير */
-    transition: all 0.3s ease;
-    /* لعمل تأثير سلس عند التمرير */
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.lang-switcher a:hover {
-    color: #000;
-    /* تغيير اللون عند المرور */
-    border-color: #ccc;
-    /* إظهار إطار خفيف */
-    border-radius: 5px;
-}
-
-.grandplazalogo {
+.menubar {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 200px;
+    justify-content: space-between;
 }
 
-
-.logoimg {
-    width: 400px;
-    height: auto;
+.logobar {
+    width: fit-content;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.logobar label {
+    display: none;
+}
+
+#menubar {
+    display: none;
+}
+
 
 .navigations {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 350px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: flex;
+    height: 100%;
+
+}
+
+.item {
+    width: 160px;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navigations a {
@@ -74,13 +89,83 @@ header {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
-    padding-left: 30px;
     transition: color 0.3s ease;
+    margin: 25px;
+}
+
+
+nav a.active {
+    color: white;
+    background-color: #292a3e;
+    border: none;
+    border-radius: 24px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 18px;
+}
+
+nav a.active:hover {
+    background-color: #b49c79;
 
 }
 
-.navigations a:hover {
-    color: #d4af37;
+
+
+.logoimg {
+    height: 65px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1000px) {
+    .menubar {
+        flex-direction: column;
+    }
+
+    .menubar .logobar {
+        width: 100%;
+    }
+
+    .menubar .logobar label {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        color: #292a3e;
+    }
+
+    .menubar .logobar label::before {
+        position: absolute;
+        content: "menu";
+        font-family: "Material Icons";
+        top: 0;
+        left: 0;
+        font-size: 30px;
+    }
+
+    .menubar .navigations {
+        width: 100%;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menubar .item {
+        width: 100%;
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    #menubar:checked~.navigations {
+        max-height: 500px;
+    }
+
+    #menubar:checked~.logobar label::before {
+        content: "close";
+    }
+
 }
 
 .homemainphoto {
@@ -644,6 +729,7 @@ textarea {
     font-family: "Tajawal", "Cairo", sans-serif;
 }
 
+/* ==== العنوان ==== */
 .about-section h2 {
     font-size: 2.6em;
     color: #222;
@@ -663,6 +749,7 @@ textarea {
     border-radius: 10px;
 }
 
+/* ==== الشبكة ==== */
 .about-grid {
     display: flex;
     flex-direction: column;
@@ -708,7 +795,7 @@ textarea {
     background: linear-gradient(135deg, #f7f7f7, #ffffff);
 }
 
-/* ==== تأثير hover الفاخر ==== */
+/* ==== تأثير hover ==== */
 .about-item::before {
     content: "";
     position: absolute;
@@ -738,6 +825,7 @@ textarea {
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease;
+    object-fit: cover;
 }
 
 .about-item img:hover {
@@ -793,19 +881,45 @@ textarea {
         padding: 60px 6%;
     }
 
-    .about-item {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
+    .about-grid {
+        gap: 50px;
     }
 
-    .about-text,
+    .about-item {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 25px 20px;
+    }
+
+    .about-item.reverse {
+        flex-direction: column !important;
+        /* عشان الجوال ما يعكس الترتيب */
+    }
+
     .about-item img {
         width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 12px;
+        color: #333;
+        display: block;
+        /* يضمن ظهوره دائمًا */
+        visibility: visible;
+        opacity: 1;
     }
 
     .about-text h3 {
-        font-size: 1.7em;
+        font-size: 1.5em;
+        margin-bottom: 10px;
     }
 
     .about-text p {
@@ -813,13 +927,14 @@ textarea {
         line-height: 1.9;
     }
 
+    /* إصلاح التحريك */
     .fade-in.from-left,
     .fade-in.from-right {
-        transform: translateY(40px);
+        transform: translateY(30px);
     }
 }
 
-/* ==== القسم السابع (الصورة الكاملة) ==== */
+/* ==== القسم السابع (الكروكي) ==== */
 .about-item.full-image {
     justify-content: center;
     background: none;
@@ -829,13 +944,24 @@ textarea {
 
 .about-item.full-image img {
     width: 100%;
-    max-width: 2000px;
-    /* حدد الحد الأقصى */
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s ease;
+    max-width: 1600px;
+    border-radius: 25px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
+    transition: transform 0.6s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .about-item.full-image img:hover {
     transform: scale(1.03);
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+    .about-item.full-image img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    }
 }
