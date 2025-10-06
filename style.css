@@ -133,6 +133,7 @@ nav a.active:hover {
         width: 30px;
         height: 30px;
         color: #292a3e;
+        gap: 10px;
     }
 
     .menubar .logobar label::before {
@@ -142,6 +143,7 @@ nav a.active:hover {
         top: 0;
         left: 0;
         font-size: 30px;
+        width: 100%;
     }
 
     .menubar .navigations {
@@ -168,9 +170,27 @@ nav a.active:hover {
 
 }
 
-.homemainphoto {
+
+
+.header-image-section {
+    /* 1. تحديد الصورة وموقعها */
+    background-image: url('media/homemainphoto.jpeg');
     background-repeat: no-repeat;
+
+    /* 2. الأهم: لضمان التغطية والحفاظ على الأبعاد */
+    /* "cover" تجعل الصورة تغطي العنصر بالكامل مع اقتطاع الزوائد للحفاظ على الأبعاد */
     background-size: cover;
+
+    /* 3. لضمان أن مركز الصورة هو الظاهر دائمًا */
+    background-position: center center;
+
+    /* 4. تحديد ارتفاع ثابت (أو متغير) للعنصر لترى الصورة */
+    /* استخدم قيمة ثابتة بالـ px أو نسبة من ارتفاع الشاشة (vh) */
+    height: 1000px;
+    /* أو */
+    /* height: 35vh; */
+
+    /* 5. جعل العرض 100% ليغطي الشاشة بالكامل */
     width: 100%;
 }
 
