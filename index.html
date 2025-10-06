@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Grand Plaza</title>
 
 </head>
@@ -14,12 +15,22 @@
 <body>
     <!--هنا الشريط العلوي للصفحة-->
     <header>
-        <a href="#" class="grandplazalogo"><img src="media/grandplazalogo.png" class="logoimg" alt="logo"></a>
-        <nav class="navigations">
-            <a href="#home">الرئيسية</a>
-            <a href="#aboutus">حول جراند بلازا</a>
-            <a href="#contactus">تواصل معنا</a>
-        </nav>
+        <div class="center">
+            <div class="menubar">
+                <input type="checkbox" name="" id="menubar">
+                <div class="logobar">
+                    <a href="#" class="grandplazalogo"><img src="media/grandplazalogo.png" class="logoimg"
+                            alt="logo"></a>
+                    <label for="menubar"></label>
+                </div>
+                <nav class="navigations">
+                    <a href="#home" class="item">الرئيسية</a>
+                    <a href="#aboutus" class="item">حول جراند بلازا</a>
+                    <a href="#contactus" class="item">تواصل معنا</a>
+                </nav>
+            </div>
+
+        </div>
 
     </header>
 
@@ -251,7 +262,29 @@
         fadeElements.forEach(el => observer.observe(el));
     </script>
 
+    <Script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
 
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+    </Script>
 
 </body>
 
